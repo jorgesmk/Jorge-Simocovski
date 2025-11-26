@@ -7,8 +7,9 @@ author_profile: true
 
 # Jorge Luis Simocovski
 
-Analista de Engenharia de TI Sênior em transição para Product Management. Conecto qualidade, dados e produto para transformar problemas em soluções escaláveis e orientadas a valor. Atuo em discovery técnico, definição de métricas (OKRs/KPIs) e priorização de backlog, com foco em impacto ao cliente e melhoria contínua.
+<p style="margin-top:0.25rem"><img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski" style="width:140px;border-radius:50%;display:inline-block;margin-right:1rem;vertical-align:middle"> <strong style="font-size:1.05rem">Analista de Engenharia de TI Sênior</strong><br><small>Em transição para Product Management — Brasil</small></p>
 
+Analista de Engenharia de TI Sênior em transição para Product Management. Conecto qualidade, dados e produto para transformar problemas em soluções escaláveis e orientadas a valor. Atuo em discovery técnico, definição de métricas (OKRs/KPIs) e priorização de backlog, com foco em impacto ao cliente e melhoria contínua.
 ---
 
 ## O que faço
@@ -37,8 +38,12 @@ Analista de Engenharia de TI Sênior em transição para Product Management. Con
 
 - Gestão em Tecnologia da Informação
 
-## Vamos conversar
 
-Se quiser que eu adicione contato, LinkedIn, GitHub ou uma foto, me envie os links ou a imagem e eu atualizo a página. Esta versão foi atualizada para apresentar seu perfil de forma mais direta e orientada a projetos — pronta para servir como base do portfólio.
+## Contato
+
+- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
+- Email: (adicione seu e-mail aqui se desejar)
+
+Esta versão foi atualizada para apresentar seu perfil de forma mais direta e orientada a projetos — pronta para servir como base do portfólio. Se quiser, atualizo o e‑mail direto, GitHub e adiciono foto alternativa ou ajustes de layout.
 
 
