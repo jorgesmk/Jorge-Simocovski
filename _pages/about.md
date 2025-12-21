@@ -11,6 +11,14 @@ author_profile: true
 
 Tomo decisões de produto em ambientes técnicos complexos, equilibrando cliente, dados, engenharia e risco ao longo do tempo.
 
+<div style="border-left:4px solid #3b82f6;background:#f8fafc;padding:0.75rem 1rem;border-radius:4px;margin:1rem 0">
+<p style="margin:0 0 0.5rem"><strong>Decisões claras e mensuráveis em sistemas técnicos complexos.</strong></p>
+<ul style="margin:0;padding-left:1.1rem">
+  <li><strong>Plataformas & Dados</strong> — escala, resiliência e previsibilidade.</li>
+  <li><strong>Produtos técnicos B2B</strong> — APIs, integrações e confiança do cliente.</li>
+  <li><strong>Enablement & Internos</strong> — eficiência, qualidade e velocidade das entregas.</li>
+</ul>
+</div>
 ---
 
 ## Quem eu sou

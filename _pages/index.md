@@ -7,7 +7,10 @@ author_profile: true
 
 # Jorge Luis Simocovski — Technical Product Manager
 
-**Decisões de produto em contextos técnicos complexos, com foco em impacto ao longo do tempo**
+<p style="margin-top:0.25rem">
+	<img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski" style="width:120px;border-radius:50%;display:inline-block;margin-right:1rem;vertical-align:middle">
+	<strong style="display:inline-block;vertical-align:middle">**Decisões de produto em contextos técnicos complexos, com foco em impacto ao longo do tempo**</strong>
+</p>
 
 Atuo como Technical Product Manager em produtos técnicos complexos, onde decisões precisam equilibrar cliente, engenharia, dados e risco operacional ao longo do tempo.
 
