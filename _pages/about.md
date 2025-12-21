@@ -82,13 +82,6 @@ Os projetos apresentados neste portfólio mostram como essas decisões se materi
 
 
 
-## Contato & próximos passos
-
-- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
-- Email: (adicione seu e‑mail aqui se desejar)
-- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
-- Email: (adicione seu e‑mail aqui se desejar)
-
 
 
 

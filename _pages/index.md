@@ -22,3 +22,9 @@ Não foco na entrega de funcionalidades isoladas, mas em definir problemas relev
 - **Discovery orientado a aprendizado,** utilizando experimentos para reduzir incertezas antes de escalar decisões
 
 Os cases apresentados mostram como essas decisões se materializam na prática, sempre com foco em contexto, escolha e impacto.
+
+## Contato
+
+- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
+- Email: jorgesmk@gmail.com
+- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
