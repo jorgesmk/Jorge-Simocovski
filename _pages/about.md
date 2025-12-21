@@ -80,13 +80,7 @@ Os projetos apresentados neste portfólio mostram como essas decisões se materi
 
 
 
-## Exemplo de decisão (snapshot)
 
-Contexto: aumento de falhas em produção afetando retentividade de clientes empresariais.
-Objetivo: reduzir erros críticos em 70% em 3 meses sem reduzir throughput de integrações.
-Decisão: priorizar investimento em testes de contrato + melhorias de observabilidade antes de reescrever módulos; executar correções incrementais com experimentos de carga.
-Trade‑offs: custo de testes automáticos e tempo de sprint vs. risco de outage; custo justificado pela redução prevista em churn e custo operacional.
-Impacto: redução de erros críticos em 78% e queda no custo de suporte em 42% após 3 meses (métricas de produto e operacional).
 
 ## Contato & próximos passos
 
