@@ -1,0 +1,24 @@
+<nav class="case-nav" role="navigation" aria-label="Case navigation">
+  <div class="crumbs"><a href="{{ site.baseurl }}/">Home</a> / <a href="{{ site.baseurl }}/projects/">Projects</a> / <span>{{ page.title }}</span></div>
+  <div class="case-links">
+    {% assign all = site.data.projects | sort: 'order' %}
+    {% for p in all %}
+      {% if p.permalink == page.url %}
+        {% assign idx = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign prev_idx = idx | minus: 1 %}
+    {% assign next_idx = idx | plus: 1 %}
+
+    {% if prev_idx >= 0 %}
+      {% assign prev = all[prev_idx] %}
+      <a class="prev" href="{{ site.baseurl }}{{ prev.permalink }}">← {{ prev.title }}</a>
+    {% endif %}
+
+    {% if next_idx < all.size %}
+      {% assign next = all[next_idx] %}
+      <a class="next" href="{{ site.baseurl }}{{ next.permalink }}">{{ next.title }} →</a>
+    {% endif %}
+  </div>
+</nav>

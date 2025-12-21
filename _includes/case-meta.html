@@ -1,0 +1,11 @@
+<aside class="case-meta">
+  {% if page.decision_line %}
+    <div class="decision">Decision: <strong>{{ page.decision_line }}</strong></div>
+  {% endif %}
+  {% if page.key_metric %}
+    <div class="metric">Key metric: <span class="badge">{{ page.key_metric }}</span></div>
+  {% endif %}
+  {% if page.status %}
+    <div class="status">Status: <span class="status-{{ page.status }}">{{ page.status }}</span></div>
+  {% endif %}
+</aside>
