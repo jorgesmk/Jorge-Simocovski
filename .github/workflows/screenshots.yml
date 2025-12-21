@@ -1,0 +1,50 @@
+name: Build site & capture screenshots
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Ruby & Jekyll
+        run: |
+          sudo gem install jekyll bundler
+
+      - name: Build site
+        run: |
+          jekyll build --verbose
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install screenshot tools
+        run: |
+          npm install
+
+      - name: Serve _site
+        run: |
+          npx http-server _site -p 8080 &
+          # give server time to start
+          sleep 2
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run screenshots
+        env:
+          BASE_URL: http://127.0.0.1:8080
+        run: npm run screenshot
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/
