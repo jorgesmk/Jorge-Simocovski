@@ -1,0 +1,20 @@
+# Projects metadata (ordered). Use this file to control listing, order and filters.
+# Fields: id, title, permalink, tags (platform|b2b|internal), short_blurb, key_metric, status, order
+
+- id: example-case-1
+  title: "Example: Platform Observability"
+  permalink: "/projects/example-platform-observability/"
+  tags: [platform, data]
+  short_blurb: "Spec-driven initiative to expose observability metrics as product features."
+  key_metric: "+25% signal coverage"
+  status: "experiment"
+  order: 1
+
+- id: example-case-2
+  title: "Example: Internal Developer Enablement"
+  permalink: "/projects/example-dev-enablement/"
+  tags: [internal, engineering]
+  short_blurb: "Enablement tooling to reduce mean time to merge and increase dev throughput."
+  key_metric: "-18% MTTR"
+  status: "launched"
+  order: 2
