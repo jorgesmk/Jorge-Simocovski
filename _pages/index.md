@@ -25,6 +25,5 @@ Os cases apresentados mostram como essas decisões se materializam na prática, 
 
 ## Contato
 
-- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
+- LinkedIn: jorgesimocovski
 - Email: jorgesmk@gmail.com
-- LinkedIn: [jorgesimocovski](https://www.linkedin.com/in/jorgesimocovski/)
