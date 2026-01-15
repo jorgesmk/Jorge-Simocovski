@@ -1,22 +1,57 @@
 # Portfólio — Jorge Simocovski
 
-Este é um portfólio em Jekyll hospedado no GitHub Pages.
+Este é um portfólio em Jekyll hospedado no GitHub Pages, refatorado para eliminar paginação desnecessária e manter a estrutura limpa e eficiente.
 
-## Manutenção de Cases
+## Estrutura do Projeto
 
-Como adicionar/atualizar um case:
+```
+_pages/
+  index.md              # Home
+  about.md              # Sobre
+  experience.md         # Experiência (timeline)
+  skills.md             # Skills (badges)
+  cases.md              # Index de cases
+  *.md                  # Case detail pages
 
-1. Crie o arquivo markdown em `_pages/projects/` com o conteúdo do case. Use a estrutura: Contexto → Problema → Objetivos & Métricas → Requisitos → Decisões & Trade‑offs → Execução → Resultados & Aprendizados.
-2. Adicione/atualize a entrada correspondente em `_data/projects.yml` com os campos: `id`, `title`, `permalink`, `tags`, `short_blurb`, `key_metric`, `status`, `order`.
-3. O índice `/projects/` lê `_data/projects.yml` e exibirá o case como um card automaticamente.
-4. Para controlar a ordem de navegação (prev/next), ajuste o campo `order` no `_data/projects.yml`.
-5. Mantenha commits pequenos e descritivos. Cada alteração visual ou de conteúdo deve ter um commit separado para fácil rollback.
+_data/
+  navigation.yml        # Navegação do site
 
-## Design, testes e execução local
+_includes/
+  site-nav.html         # Navegação (incluso em todas as páginas)
 
-- **Paleta recomendada:** profissional e sóbria — primary `#0b3d91` (navy), accent `#0ea5a4` (teal), neutro `#6b7280` (muted). Essas variáveis estão definidas em `_layouts/single.html` e servem para manter consistência visual.
-- **Tom de voz:** claro, técnico na medida certa, confiante e humano — priorize frases que expliquem decisões e impacto (não listas de tarefas).
-- **Testar localmente:** para pré-visualizar as mudanças, instale Ruby + Bundler e rode (PowerShell):
+assets/css/
+  custom.css            # Design system (Navy #003366 + Laranja #FF5F1F)
+
+_layouts/
+  single.html           # Layout padrão (limpo, sem paginação)
+```
+
+## Como Adicionar um Novo Case
+
+1. Crie um novo arquivo markdown em `_pages/` (ex: `_pages/seu-case.md`)
+2. Use o front matter com permalink `/cases/seu-case/`:
+   ```yaml
+   ---
+   title: "Título do Case"
+   permalink: /cases/seu-case/
+   layout: single
+   author_profile: false
+   ---
+   ```
+3. Estruture o conteúdo: Context → Problem → Decision → Approach → Metrics → Impact → Result
+4. Adicione um link no `cases.md` para referência cruzada
+5. Commit e push!
+
+## Paleta de Cores
+
+- **Primária (Navy):** `#003366` — backgrounds, títulos, elementos principais
+- **Destaque (Laranja):** `#FF5F1F` — botões, números de impacto, links de ação
+- **Background:** `#FFFFFF` ou `#F8F9FA` (cinza claro)
+- **Texto:** `#1A1A1A` (escuro) ou `#555555` (médio)
+
+Todas as cores estão definidas em `assets/css/custom.css` como variáveis CSS (`:root`).
+
+## Testar Localmente
 
 ```powershell
 gem install bundler jekyll
@@ -24,5 +59,11 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-- Se não quiser instalar localmente, cada commit será publicado no GitHub Pages após o push (pode demorar alguns minutos para propagar).  
+Acesse `http://localhost:4000/Jorge-Simocovski/` no navegador.
+
+## Commits e Deploy
+
+- Commits semânticos: feature, fix, refactor, docs, style
+- Cada push para `main` dispara build automático no GitHub Pages (~1 minuto de propagação)
+- Rollbacks são fáceis via git revert
 

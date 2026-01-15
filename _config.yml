@@ -2,7 +2,7 @@
 title: "Portfólio – Jorge Simocovski"
 description: "Product Discovery • Qualidade • Estratégia • Engenharia"
 url: "https://jorgesmk.github.io"
-baseurl: "/Jorge-Simocovski"  # se estiver em projeto Page
+baseurl: "/Jorge-Simocovski"
 
 # Tema suportado oficialmente pelo GitHub Pages
 theme: jekyll-theme-primer
@@ -13,7 +13,7 @@ author:
   bio: "Profissional de Produto e Engenharia. Especialista em Qualidade, Discovery e Delivery."
   location: "Brasil"
 
-# Configurações de navegação (opcional)
+# Configurações de navegação
 include:
   - _pages
 
@@ -24,4 +24,3 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
