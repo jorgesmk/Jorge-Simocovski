@@ -1,32 +1,23 @@
 ---
-title: "Bem-vindo!"
+title: "Home"
 permalink: /
 layout: single
 author_profile: true
 ---
 
-# Jorge Luis Simocovski — Technical Product Manager
+# De Reativo a Preventivo: Qualidade como Produto
 
-<p style="margin-top:0.25rem">
-	<img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski" style="width:120px;border-radius:50%;display:inline-block;margin-right:1rem;vertical-align:middle">
-	<strong style="display:inline-block;vertical-align:middle">**Decisões de produto em contextos técnicos complexos, com foco em impacto ao longo do tempo**</strong>
+<p style="margin-top:1rem;margin-bottom:1.5rem">
+  <img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski" style="width:120px;border-radius:50%;display:inline-block;margin-right:1.5rem;vertical-align:middle">
+  <span style="display:inline-block;vertical-align:middle;font-size:1.05rem">
+    Transformei modelos centralizados em capacidades distribuídas orientadas a dados. Minha atuação combina qualidade de engenharia, governança técnica e mentalidade de produto para aumentar autonomia das squads, reduzir gargalos e elevar padrões técnicos com visibilidade total. Resultados: menos risco, mais velocidade previsível.
+  </span>
 </p>
 
-Atuo como Technical Product Manager em produtos técnicos complexos, onde decisões precisam equilibrar cliente, engenharia, dados e risco operacional ao longo do tempo.
+## Meus focos de atuação:
 
-Meu trabalho é transformar problemas reais em decisões claras, priorizadas por valor e sustentadas por métricas ao longo do ciclo do produto.
+- **Qualidade em Escala** — transformar qualidade de burocracia em capacidade competitiva, com governança clara e autonomia das squads
+- **Decisões Orientadas a Dados** — estruturar problemas, levantar métricas e influenciar prioridades com evidências
+- **Cultura de Engenharia** — elevar padrões técnicos, reduzir risco operacional e aumentar previsibilidade
 
-Não foco na entrega de funcionalidades isoladas, mas em definir problemas relevantes, explicitar trade-offs e assumir responsabilidade pelo impacto das escolhas feitas.
-
-## Principais focos da minha atuação:
-
-- **Definição de problemas e objetivos claros,** sempre ancorados em necessidades reais do cliente
-- **Priorização com trade-offs explícitos,** equilibrando risco, custo, tempo e impacto esperado
-- **Discovery orientado a aprendizado,** utilizando experimentos para reduzir incertezas antes de escalar decisões
-
-Os cases apresentados mostram como essas decisões se materializam na prática, sempre com foco em contexto, escolha e impacto.
-
-## Contato
-
-- LinkedIn: jorgesimocovski
-- Email: jorgesmk@gmail.com
+[Ver cases](#cases) | [LinkedIn](https://www.linkedin.com/in/jorgesimocovski/) | Email: jorgesmk@gmail.com
