@@ -2,22 +2,68 @@
 title: "Home"
 permalink: /
 layout: single
-author_profile: true
+author_profile: false
 ---
 
-# De Reativo a Preventivo: Qualidade como Produto
+<section class="hero">
+  <div class="hero-image">
+    <img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski">
+  </div>
+  <div class="hero-text">
+    <h1>Jorge Luis Simocovski</h1>
+    <p class="subtitle">Technical Product Manager | QA Specialist</p>
+    <p class="tagline">"Ser o cargo antes de ter o cargo."</p>
+  </div>
+</section>
 
-<p style="margin-top:1rem;margin-bottom:1.5rem">
-  <img src="{{ site.baseurl }}/assets/images/jorge.jpg" alt="Jorge Luis Simocovski" style="width:120px;border-radius:50%;display:inline-block;margin-right:1.5rem;vertical-align:middle">
-  <span style="display:inline-block;vertical-align:middle;font-size:1.05rem">
-    Transformei modelos centralizados em capacidades distribuídas orientadas a dados. Minha atuação combina qualidade de engenharia, governança técnica e mentalidade de produto para aumentar autonomia das squads, reduzir gargalos e elevar padrões técnicos com visibilidade total. Resultados: menos risco, mais velocidade previsível.
-  </span>
-</p>
+---
 
-## Meus focos de atuação:
+## Visão
 
-- **Qualidade em Escala** — transformar qualidade de burocracia em capacidade competitiva, com governança clara e autonomia das squads
-- **Decisões Orientadas a Dados** — estruturar problemas, levantar métricas e influenciar prioridades com evidências
-- **Cultura de Engenharia** — elevar padrões técnicos, reduzir risco operacional e aumentar previsibilidade
+Transformo qualidade e dados em produtos escaláveis. Com mais de 15 anos de experiência técnica, atuo na interseção entre Engenharia e Negócio para reduzir incertezas e acelerar entregas.
 
-[Ver cases](#cases) | [LinkedIn](https://www.linkedin.com/in/jorgesimocovski/) | Email: jorgesmk@gmail.com
+---
+
+## Meus focos de atuação
+
+<div class="advantages-grid">
+  <div class="advantage-card">
+    <div class="advantage-icon">📊</div>
+    <h3 class="advantage-title">Redução de Incerteza</h3>
+    <p class="advantage-description">Antecipação de riscos técnicos através de métricas e dados estruturados.</p>
+  </div>
+  
+  <div class="advantage-card">
+    <div class="advantage-icon">💾</div>
+    <h3 class="advantage-title">Fluência em Dados</h3>
+    <p class="advantage-description">Autonomia em SQL & QuickSight para decisões baseadas em evidências.</p>
+  </div>
+  
+  <div class="advantage-card">
+    <div class="advantage-icon">🌉</div>
+    <h3 class="advantage-title">Ponte Técnica</h3>
+    <p class="advantage-description">Tradução de requisitos em viabilidade entre Produto e Engenharia.</p>
+  </div>
+  
+  <div class="advantage-card">
+    <div class="advantage-icon">👁️</div>
+    <h3 class="advantage-title">Visão End-to-End</h3>
+    <p class="advantage-description">Foco na jornada completa do usuário e impacto mensurável.</p>
+  </div>
+</div>
+
+---
+
+<div style="margin-top: 3rem; padding: 2rem; background: var(--color-bg-light); border-radius: 12px; text-align: center;">
+  <p style="margin-bottom: 1rem;">
+    <a href="{{ site.baseurl }}/about/" class="btn btn-primary">Saiba Mais</a>
+    <a href="{{ site.baseurl }}/cases/" class="btn btn-accent">Ver Cases</a>
+  </p>
+  
+  <div style="margin-top: 2rem; color: var(--color-text-light);">
+    <strong>Conectar:</strong><br>
+    <a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" class="link-nav">LinkedIn</a>
+    <span style="margin: 0 0.5rem;">•</span>
+    <span>jorgesmk@gmail.com</span>
+  </div>
+</div>

@@ -2,46 +2,55 @@
 title: "Cases"
 permalink: /cases/
 layout: single
-author_profile: true
+author_profile: false
 ---
 
-# Cases
+# Cases de Impacto
 
-Decisões, trade-offs e impacto mensurável.
-
----
-
-## Cultura de Qualidade e Testes
-
-**De dependência de QA a autonomia das squads**
-
-Squads dependiam de ciclos longos de testes manuais, QA era gargalo operacional e bugs chegavam à produção com frequência. Transformei qualidade de burocracia central em responsabilidade compartilhada das squads, via shift-left testing, empoderamento de desenvolvedores e alinhamento entre planejamento e qualidade.
-
-**Resultado:** cobertura de testes aumentada de 30% para 85%, redução de 65% em bugs críticos, squads com autonomia de validação.
-
-[Ler caso completo →]({{ site.baseurl }}/cases/quality-culture/)
+Decisões, trade-offs e resultados mensuráveis.
 
 ---
 
-## Qualidade como Produto de Dados
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
 
-**De centralização técnica a escalabilidade distribuída**
+  <div class="impact-card">
+    <div>
+      <div class="impact-label">Dados & Autonomia</div>
+      <div class="impact-number">1.5k</div>
+      <p style="color: var(--color-text-light); font-size: 0.9rem; margin-top: 0.5rem;">acessos em 10 meses</p>
+    </div>
+    <div>
+      <h3 class="impact-title">Data-as-a-Product</h3>
+      <p class="impact-description">Democratização de dados com QuickSight, gerando 100% de autonomia para as squads em decisões baseadas em métricas.</p>
+      <a href="{{ site.baseurl }}/cases/quality-data-product/" class="btn btn-accent" style="margin-top: 1rem; width: 100%; text-align: center;">Ler caso completo →</a>
+    </div>
+  </div>
 
-Modelo centralizado de QA criava gargalos: squads aguardavam análises manuais, lideranças tinham pouca visibilidade de riscos. Transformei qualidade em um produto de dados escalável — dashboards em tempo real, visibilidade total, decisões baseadas em métricas.
+  <div class="impact-card">
+    <div>
+      <div class="impact-label">Qualidade Preventiva</div>
+      <div class="impact-number">-65%</div>
+      <p style="color: var(--color-text-light); font-size: 0.9rem; margin-top: 0.5rem;">redução de bugs</p>
+    </div>
+    <div>
+      <h3 class="impact-title">AI-Driven Quality</h3>
+      <p class="impact-description">Agentes de IA no CI/CD para code review inteligente. Iniciativa convertida em KR oficial da engenharia.</p>
+      <a href="{{ site.baseurl }}/cases/intelligent-quality/" class="btn btn-accent" style="margin-top: 1rem; width: 100%; text-align: center;">Ler caso completo →</a>
+    </div>
+  </div>
 
-**Resultado:** 100% de bugs monitorados em tempo real, 100% squads com acesso autônomo, 1.5k acessos em 10 meses.
+  <div class="impact-card">
+    <div>
+      <div class="impact-label">Cultura & Escala</div>
+      <div class="impact-number">30% → 85%</div>
+      <p style="color: var(--color-text-light); font-size: 0.9rem; margin-top: 0.5rem;">cobertura de testes</p>
+    </div>
+    <div>
+      <h3 class="impact-title">Engenharia Autônoma</h3>
+      <p class="impact-description">De dependência de QA centralizada para autonomia total das squads. Shift-left testing + empoderamento.</p>
+      <a href="{{ site.baseurl }}/cases/quality-culture/" class="btn btn-accent" style="margin-top: 1rem; width: 100%; text-align: center;">Ler caso completo →</a>
+    </div>
+  </div>
 
-[Ler caso completo →]({{ site.baseurl }}/cases/quality-data-product/)
-
----
-
-## Qualidade Inteligente: IA + Testes por Feature
-
-**Prevenção contínua via IA no code review e testes integrados**
-
-Code review era manual e tardio, erros evitáveis chegavam à produção. Criei uma camada de qualidade inteligente integrada ao fluxo de desenvolvimento: IA no code review + testes integrados por feature + feedback imediato no pipeline.
-
-**Resultado:** 65% redução de bugs em produção, 100% repositórios com IA e testes ativos, mudança cultural de correção tardia para prevenção contínua.
-
-[Ler caso completo →]({{ site.baseurl }}/cases/intelligent-quality/)
+</div>
 
