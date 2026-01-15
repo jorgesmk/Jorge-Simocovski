@@ -19,7 +19,7 @@ Squads dependiam de ciclos longos de testes manuais, QA era gargalo operacional 
 
 **Resultado:** cobertura de testes aumentada de 30% para 85%, redução de 65% em bugs críticos, squads com autonomia de validação.
 
-[Ler caso completo →](/cases/quality-culture/)
+[Ler caso completo →]({{ site.baseurl }}/cases/quality-culture/)
 
 ---
 
@@ -31,7 +31,7 @@ Modelo centralizado de QA criava gargalos: squads aguardavam análises manuais, 
 
 **Resultado:** 100% de bugs monitorados em tempo real, 100% squads com acesso autônomo, 1.5k acessos em 10 meses.
 
-[Ler caso completo →](/cases/quality-data-product/)
+[Ler caso completo →]({{ site.baseurl }}/cases/quality-data-product/)
 
 ---
 
@@ -43,5 +43,5 @@ Code review era manual e tardio, erros evitáveis chegavam à produção. Criei 
 
 **Resultado:** 65% redução de bugs em produção, 100% repositórios com IA e testes ativos, mudança cultural de correção tardia para prevenção contínua.
 
-[Ler caso completo →](/cases/intelligent-quality/)
+[Ler caso completo →]({{ site.baseurl }}/cases/intelligent-quality/)
 
