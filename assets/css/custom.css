@@ -1,23 +1,44 @@
 /* ============================================
-   PALETA DE CORES EXECUTIVA - JORGE SIMOCOVSKI
+   DESIGN SYSTEM - JORGE SIMOCOVSKI
    ============================================ */
 
 :root {
-  /* Cores Primárias */
-  --color-primary: #003366;        /* Navy Blue Profundo */
-  --color-primary-light: #004d99;  /* Navy Blue Claro */
-  --color-accent: #FF5F1F;         /* Laranja Neon Vibrante */
-  --color-accent-dark: #E5500D;    /* Laranja Escuro */
-  --color-bg: #FFFFFF;             /* Branco */
-  --color-bg-light: #F8F9FA;       /* Cinza Gelo */
-  --color-text: #1A1A1A;           /* Texto Escuro */
-  --color-text-light: #555555;     /* Texto Médio */
-  --color-border: #E0E0E0;         /* Borda Suave */
-  --color-success: #2ECC71;        /* Verde Sucesso */
+  --color-primary: #003366;
+  --color-primary-light: #004d99;
+  --color-accent: #FF5F1F;
+  --color-accent-dark: #E5500D;
+  --color-bg: #FFFFFF;
+  --color-bg-light: #F8F9FA;
+  --color-text: #1A1A1A;
+  --color-text-light: #555555;
+  --color-border: #E0E0E0;
+  --color-success: #2ECC71;
 }
 
 /* ============================================
-   NAVEGAÇÃO DO SITE
+   BASE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ============================================
+   NAVEGAÇÃO
    ============================================ */
 
 .site-nav {
@@ -39,6 +60,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .site-nav .brand {
@@ -50,6 +72,7 @@
   text-decoration: none;
   font-weight: 700;
   font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
 .site-nav .brand a:hover {
@@ -78,6 +101,7 @@
   transition: color 0.3s ease;
   display: block;
   padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
 }
 
 .site-nav a:hover {
@@ -98,6 +122,8 @@
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
 }
 
 .menu-toggle:hover {
@@ -106,27 +132,36 @@
 
 @media (max-width: 768px) {
   .site-nav .container {
-    flex-wrap: wrap;
-    padding: 0.75rem 1rem;
+    justify-content: space-between;
   }
 
   .site-nav ul {
     width: 100%;
     flex-direction: column;
     gap: 0.5rem;
-    display: none;
+    display: none !important;
+    order: 3;
   }
 
-  .site-nav ul[style*="display: flex"] {
+  .site-nav ul.active {
     display: flex !important;
   }
 
   .menu-toggle {
     display: block;
+    order: 2;
   }
 
   .site-nav a {
     padding: 0.75rem 0;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    padding-left: 0.75rem;
+  }
+
+  .site-nav a.active {
+    border-left: 3px solid var(--color-accent);
+    border-bottom: none;
   }
 }
 
@@ -134,24 +169,19 @@
   max-width: 1100px;
   margin: 2rem auto;
   padding: 0 1rem;
+  min-height: 60vh;
 }
 
 /* ============================================
-   TIPOGRAFIA E RESET
+   TIPOGRAFIA
    ============================================ */
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-  line-height: 1.6;
-}
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary);
   font-weight: 700;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+  line-height: 1.3;
 }
 
 h1 {
@@ -166,6 +196,18 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 p {
@@ -184,44 +226,8 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ============================================
-   CLASSES UTILITÁRIAS
-   ============================================ */
-
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-.text-accent-neon {
-  color: var(--color-accent);
-  font-weight: 700;
-  font-size: 1.1em;
-}
-
-.bg-accent {
-  background-color: var(--color-accent);
-  color: white;
-}
-
-.bg-light {
-  background-color: var(--color-bg-light);
-}
-
-.border-bottom-accent {
-  border-bottom: 3px solid var(--color-accent);
-  padding-bottom: 0.5rem;
-}
-
-.mt-large {
-  margin-top: 3rem;
-}
-
-.mb-large {
-  margin-bottom: 3rem;
+strong {
+  font-weight: 600;
 }
 
 /* ============================================
@@ -242,21 +248,11 @@ a:hover {
   transform: translateY(-2px);
 }
 
-.card-header {
-  margin-bottom: 1rem;
-}
-
 .card-title {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin: 0;
-}
-
-.card-subtitle {
-  font-size: 0.9rem;
-  color: var(--color-text-light);
-  margin: 0.5rem 0 0 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .card-body {
@@ -343,6 +339,7 @@ a:hover {
 .btn-primary:hover {
   background-color: var(--color-primary-light);
   box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+  text-decoration: none;
 }
 
 .btn-accent {
@@ -353,6 +350,7 @@ a:hover {
 .btn-accent:hover {
   background-color: var(--color-accent-dark);
   box-shadow: 0 4px 12px rgba(255, 95, 31, 0.3);
+  text-decoration: none;
 }
 
 .btn-outline {
@@ -364,6 +362,7 @@ a:hover {
 .btn-outline:hover {
   background-color: var(--color-accent);
   color: white;
+  text-decoration: none;
 }
 
 /* ============================================
@@ -451,6 +450,23 @@ a:hover {
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    width: 100%;
+    margin-left: 50px;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 8px;
+  }
+}
+
 /* ============================================
    COMPONENTES: GRID VANTAGENS
    ============================================ */
@@ -535,7 +551,7 @@ a:hover {
 }
 
 /* ============================================
-   LAYOUT: HERO SECTION
+   LAYOUT: HERO
    ============================================ */
 
 .hero {
@@ -580,49 +596,7 @@ a:hover {
 }
 
 /* ============================================
-   LAYOUT: RESPONSIVE
-   ============================================ */
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .timeline::before {
-    left: 8px;
-  }
-
-  .timeline-item:nth-child(odd) .timeline-content,
-  .timeline-item:nth-child(even) .timeline-content {
-    width: 100%;
-    margin-left: 50px;
-    text-align: left;
-  }
-
-  .timeline-dot {
-    left: 8px;
-  }
-
-  .impact-number {
-    font-size: 2.5rem;
-  }
-
-  .advantages-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ============================================
-   LAYOUT: SPACING & UTILITIES
+   UTILITIES
    ============================================ */
 
 .section {
@@ -661,6 +635,7 @@ a:hover {
   border-radius: 6px;
   color: var(--color-accent);
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .link-nav:hover {
@@ -669,15 +644,113 @@ a:hover {
   border-color: var(--color-accent);
 }
 
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-accent-neon {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.bg-light {
+  background-color: var(--color-bg-light);
+}
+
+.mt-large {
+  margin-top: 3rem;
+}
+
+.mb-large {
+  margin-bottom: 3rem;
+}
+
 /* ============================================
-   PRINT STYLES
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-number {
+    font-size: 2.5rem;
+  }
+
+  .page-content {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .impact-number {
+    font-size: 2rem;
+  }
+
+  .hero-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .impact-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ============================================
+   PRINT
    ============================================ */
 
 @media print {
+  .site-nav,
+  .menu-toggle,
   .btn,
-  .link-nav,
-  a[href*="linkedin"],
-  a[href*="twitter"] {
+  .link-nav {
     display: none;
   }
 
