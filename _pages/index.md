@@ -86,19 +86,19 @@ author_profile: false
       <div class="impact-card">
         <h3>Cultura de Qualidade e Testes</h3>
         <p>De dependência de QA a autonomia das squads. Redução de bugs críticos em 65% e cobertura para 85%.</p>
-        <a class="link" href="{{ site.baseurl }}{{ '/cases/quality-culture/' }}">Ver case →</a>
+        <a class="link" href="{{ site.baseurl }}/cases/quality-culture/">Ver case →</a>
       </div>
 
       <div class="impact-card">
         <h3>Qualidade como Produto de Dados</h3>
         <p>Dashboards e métricas em tempo real para decisões; 1.5k acessos em 10 meses e redução de decisão de 2 semanas para 2 dias.</p>
-        <a class="link" href="{{ site.baseurl }}{{ '/cases/quality-data-product/' }}">Ver case →</a>
+        <a class="link" href="{{ site.baseurl }}/cases/quality-data-product/">Ver case →</a>
       </div>
 
       <div class="impact-card">
         <h3>Qualidade Inteligente: IA + Testes</h3>
         <p>IA integrada ao code review e testes por feature; 65% menos bugs críticos e feedback em &lt; 5 minutos.</p>
-        <a class="link" href="{{ site.baseurl }}{{ '/cases/intelligent-quality/' }}">Ver case →</a>
+        <a class="link" href="{{ site.baseurl }}/cases/intelligent-quality/">Ver case →</a>
       </div>
     </div>
   </div>
