@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jorge Simocovski - Technical Product Manager | QA Leadership | Qualidade como Produto">
-    <meta name="theme-color" content="#003366">
-    <title>Jorge Simocovski - Technical Product Manager</title>
+    <meta name="description" content="Jorge Simocovski - Technical Product Manager | Deep Navy & Neon Portfolio">
+    <meta name="theme-color" content="#0a192f">
+    <title>Jorge Simocovski - TPM & QA Leadership</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* ============================================
-           RESET & BASE
+           ROOT & RESET
            ============================================ */
+        :root {
+            --bg-navy: #0a192f;
+            --bg-light-navy: #112240;
+            --text-slate: #8892b0;
+            --text-light-slate: #a8b2d1;
+            --text-white: #e6f1ff;
+            --accent-neon: #FF5F1F;
+            --accent-neon-dim: rgba(255, 95, 31, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -28,751 +36,926 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #F4F7FA;
-            color: #1A1A1A;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-navy);
+            color: var(--text-slate);
             line-height: 1.6;
             font-size: 16px;
-            overflow-x: hidden;
         }
 
         /* ============================================
-           DESIGN SYSTEM
+           SCROLLBAR
            ============================================ */
-        :root {
-            --color-primary: #003366;
-            --color-accent: #FF5F1F;
-            --color-accent-hover: #E5500D;
-            --color-bg-light: #F4F7FA;
-            --color-bg-card: #FFFFFF;
-            --color-text-dark: #1A1A1A;
-            --color-text-medium: #555555;
-            --color-text-light: #888888;
-            --color-border: #E0E0E0;
-            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
-            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-navy);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-neon);
+            border-radius: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff6f3f;
         }
 
         /* ============================================
-           CONTAINER & LAYOUT
+           NAVBAR
            ============================================ */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* ============================================
-           HEADER / HERO SECTION
-           ============================================ */
-        header {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFB 100%);
-            padding: 4rem 0;
-            border-bottom: 2px solid var(--color-accent);
-            text-align: center;
-        }
-
-        .hero {
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
             display: flex;
-            flex-direction: column;
+            justify-content: flex-end;
             align-items: center;
-            gap: 2rem;
+            gap: 3rem;
+            z-index: 1000;
+            background: rgba(10, 25, 47, 0);
+            transition: background 0.3s ease, backdrop-filter 0.3s ease;
         }
 
-        .hero-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid var(--color-accent);
-            box-shadow: 0 4px 20px rgba(255, 95, 31, 0.2);
-            overflow: hidden;
-            background: var(--color-bg-card);
+        nav.scrolled {
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 95, 31, 0.1);
         }
 
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-text h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-text h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-
-        .hero-slogan {
-            font-size: 1.05rem;
-            font-style: italic;
-            color: var(--color-text-medium);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .hero-bio {
-            font-size: 1rem;
-            color: var(--color-text-medium);
-            max-width: 600px;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .hero-ctas {
+        .nav-links {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
         }
 
-        /* ============================================
-           BUTTONS
-           ============================================ */
-        .btn {
-            padding: 0.875rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
+        .nav-links a {
+            color: var(--text-slate);
             text-decoration: none;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: var(--color-accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--color-accent-hover);
-            box-shadow: 0 6px 16px rgba(255, 95, 31, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--color-primary);
-            color: white;
-            box-shadow: 0 6px 16px rgba(0, 51, 102, 0.3);
-        }
-
-        /* ============================================
-           VANTAGENS (GRID 4 COLUNAS)
-           ============================================ */
-        .advantages-section {
-            padding: 3rem 0;
-        }
-
-        .advantages-section h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .advantage-card {
-            background: var(--color-bg-card);
-            border-radius: 16px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-            border: 1px solid var(--color-border);
-        }
-
-        .advantage-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--color-accent);
-        }
-
-        .advantage-icon {
-            font-size: 2.5rem;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-
-        .advantage-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .advantage-text {
-            font-size: 0.9rem;
-            color: var(--color-text-light);
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           TRACK RECORD (IMPACT CARDS)
-           ============================================ */
-        .track-record-section {
-            padding: 3rem 0;
-            background: var(--color-bg-card);
-            border-top: 2px solid var(--color-accent);
-            border-bottom: 2px solid var(--color-accent);
-        }
-
-        .track-record-section h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .impact-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .impact-card {
-            background: linear-gradient(135deg, #F8FAFB 0%, #FFFFFF 100%);
-            border: 2px solid var(--color-border);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 320px;
-        }
-
-        .impact-card:hover {
-            border-color: var(--color-accent);
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-6px);
-        }
-
-        .impact-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--color-accent);
-            line-height: 1;
-            margin: 1rem 0;
-            letter-spacing: -1px;
-        }
-
-        .impact-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--color-text-light);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .impact-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin: 1rem 0;
-        }
-
-        .impact-description {
-            font-size: 0.95rem;
-            color: var(--color-text-medium);
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           EXPERIENCE & SKILLS (TWO COLUMNS)
-           ============================================ */
-        .experience-skills-section {
-            padding: 3rem 0;
-        }
-
-        .experience-skills-section h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .exp-skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .experience-card,
-        .skills-card {
-            background: var(--color-bg-card);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--color-border);
-        }
-
-        .experience-card h3,
-        .skills-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--color-accent);
-            padding-bottom: 0.75rem;
-        }
-
-        .experience-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .experience-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .experience-role {
-            font-weight: 700;
-            color: var(--color-primary);
-            font-size: 1rem;
-        }
-
-        .experience-company {
-            font-weight: 600;
-            color: var(--color-accent);
-            font-size: 0.95rem;
-            margin-top: 0.25rem;
-        }
-
-        .experience-description {
-            font-size: 0.9rem;
-            color: var(--color-text-medium);
-            margin-top: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .skill-badge {
-            background: var(--color-bg-light);
-            border: 1px solid var(--color-border);
-            border-radius: 20px;
-            padding: 0.5rem 1rem;
+            font-weight: 500;
             font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--color-text-dark);
-            transition: all 0.3s ease;
+            position: relative;
+            transition: color 0.3s ease;
         }
 
-        .skill-badge.highlight {
-            background: var(--color-accent);
-            color: white;
-            border-color: var(--color-accent);
-            font-weight: 600;
+        .nav-links a .nav-number {
+            color: var(--accent-neon);
+            margin-right: 0.5rem;
         }
 
-        .skill-badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        .nav-links a:hover {
+            color: var(--accent-neon);
         }
 
-        /* ============================================
-           FOOTER
-           ============================================ */
-        footer {
-            background: var(--color-primary);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-link {
-            color: var(--color-accent);
+        .nav-resume {
+            border: 1px solid var(--accent-neon);
+            color: var(--accent-neon);
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .footer-link:hover {
-            color: white;
-            transform: translateY(-2px);
+        .nav-resume:hover {
+            background: rgba(255, 95, 31, 0.1);
+            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
         }
 
-        .footer-bottom {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-        }
-
-        /* ============================================
-           RESPONSIVE DESIGN
-           ============================================ */
         @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-
-            header {
-                padding: 2.5rem 0;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .hero-text h2 {
-                font-size: 1.1rem;
-            }
-
-            .advantages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .impact-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .impact-number {
-                font-size: 2.5rem;
-            }
-
-            .exp-skills-grid {
-                grid-template-columns: 1fr;
+            nav {
+                padding: 1rem 1.5rem;
                 gap: 1.5rem;
             }
 
-            .hero-ctas {
-                flex-direction: column;
-                width: 100%;
+            .nav-links {
+                gap: 1.5rem;
             }
 
-            .btn {
-                width: 100%;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.75rem;
-            }
-
-            .hero-text h2 {
-                font-size: 1rem;
-            }
-
-            .hero-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            .impact-number {
-                font-size: 2rem;
-            }
-
-            .impact-card {
-                padding: 1.5rem 1rem;
-                min-height: auto;
-            }
-
-            .advantages-grid {
-                gap: 1rem;
-            }
-
-            .advantage-card {
-                padding: 1rem;
-            }
-
-            .experience-card,
-            .skills-card {
-                padding: 1.5rem;
+            .nav-links a .nav-number {
+                display: none;
             }
         }
 
         /* ============================================
-           ANIMATIONS & EFFECTS
+           CONTAINER & MAIN LAYOUT
            ============================================ */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        header,
-        .advantages-section,
-        .track-record-section,
-        .experience-skills-section,
-        footer {
-            animation: fadeInUp 0.8s ease-out;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         section {
-            animation-delay: 0.1s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 0;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 0;
+        }
+
+        .hero-intro {
+            color: var(--accent-neon);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-light-slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-bio {
+            max-width: 550px;
+            color: var(--text-slate);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            border: 2px solid var(--accent-neon);
+            color: var(--accent-neon);
+            padding: 1rem 1.75rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hero-cta:hover {
+            background: rgba(255, 95, 31, 0.1);
+            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
+            transform: translateX(4px);
+        }
+
+        /* ============================================
+           SECTION HEADER
+           ============================================ */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            gap: 1.5rem;
+        }
+
+        .section-number {
+            color: var(--accent-neon);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 95, 31, 0.2);
+            max-width: 300px;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-slate);
+            line-height: 1.8;
+        }
+
+        .about-text strong {
+            color: var(--text-white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            color: var(--text-slate);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-item::before {
+            content: "▷";
+            color: var(--accent-neon);
+            font-weight: bold;
+        }
+
+        /* ============================================
+           PHOTO CONTAINER WITH EFFECT
+           ============================================ */
+        .about-photo {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-border {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--accent-neon);
+            border-radius: 4px;
+            z-index: 1;
+            top: 20px;
+            left: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(0%) brightness(1);
+            transition: all 0.3s ease;
+        }
+
+        .photo-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 95, 31, 0.3), rgba(17, 34, 64, 0.3));
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .about-photo:hover .photo-container img {
+            filter: grayscale(0%) brightness(1.1);
+        }
+
+        .about-photo:hover .photo-container::after {
+            background: linear-gradient(135deg, rgba(255, 95, 31, 0.1), rgba(17, 34, 64, 0.1));
+        }
+
+        /* ============================================
+           EXPERIENCE SECTION
+           ============================================ */
+        .experience-content {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+        }
+
+        .experience-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-left: 2px solid rgba(255, 95, 31, 0.2);
+            padding-left: 0;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            color: var(--text-slate);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 2px solid transparent;
+            margin-left: -2px;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            background: rgba(255, 95, 31, 0.05);
+            color: var(--accent-neon);
+        }
+
+        .tab-button.active {
+            background: rgba(255, 95, 31, 0.1);
+            color: var(--accent-neon);
+            border-left-color: var(--accent-neon);
+        }
+
+        .experience-content-tabs {
+            display: none;
+        }
+
+        .experience-content-tabs.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .exp-title {
+            color: var(--text-white);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-subtitle {
+            color: var(--accent-neon);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .exp-bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .exp-bullet {
+            color: var(--text-slate);
+            display: flex;
+            gap: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .exp-bullet::before {
+            content: "▷";
+            color: var(--accent-neon);
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        /* ============================================
+           WORK / PROJECTS SECTION
+           ============================================ */
+        .project {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .project.reversed {
+            direction: rtl;
+        }
+
+        .project.reversed > * {
+            direction: ltr;
+        }
+
+        .project-featured {
+            color: var(--accent-neon);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-description {
+            color: var(--text-slate);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light-slate);
+        }
+
+        .project-tech span {
+            padding-right: 1rem;
+            border-right: 1px solid rgba(255, 95, 31, 0.3);
+        }
+
+        .project-tech span:last-child {
+            border-right: none;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .project-link {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-neon);
+        }
+
+        .project-image {
+            background: var(--bg-light-navy);
+            border-radius: 4px;
+            padding: 3rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            border: 1px solid rgba(255, 95, 31, 0.2);
+        }
+
+        .project-metric {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-neon);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-number {
+            color: var(--accent-neon);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text {
+            color: var(--text-slate);
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            border: 2px solid var(--accent-neon);
+            color: var(--accent-neon);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-cta:hover {
+            background: rgba(255, 95, 31, 0.1);
+            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           SIDEBAR (SOCIAL LINKS)
+           ============================================ */
+        .sidebar-social {
+            position: fixed;
+            left: 2rem;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            z-index: 100;
+        }
+
+        .sidebar-social::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 100px;
+            background: rgba(255, 95, 31, 0.3);
+            margin: 1rem auto;
+        }
+
+        .social-link {
+            color: var(--text-slate);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--accent-neon);
+            transform: translateY(-3px);
+        }
+
+        .sidebar-email {
+            position: fixed;
+            right: 2rem;
+            bottom: 0;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            color: var(--text-slate);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+            z-index: 100;
+        }
+
+        .sidebar-email:hover {
+            color: var(--accent-neon);
+        }
+
+        .sidebar-email::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 100px;
+            background: rgba(255, 95, 31, 0.3);
+            margin: 1rem auto;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .about-content,
+            .experience-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-content {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-tabs {
+                flex-direction: row;
+                border-left: none;
+                border-bottom: 2px solid rgba(255, 95, 31, 0.2);
+                padding-bottom: 0;
+                overflow-x: auto;
+            }
+
+            .tab-button {
+                border-left: none;
+                border-bottom: 2px solid transparent;
+                margin: 0;
+                margin-bottom: -2px;
+            }
+
+            .tab-button.active {
+                border-left: none;
+                border-bottom-color: var(--accent-neon);
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 0 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.75rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.25rem;
+            }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .sidebar-social,
+            .sidebar-email {
+                display: none;
+            }
+
+            .photo-border,
+            .about-photo {
+                width: 200px;
+            }
+
+            .photo-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .photo-border {
+                width: 200px;
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- ============================================
-         HEADER / HERO SECTION
+         NAVBAR
          ============================================ -->
-    <header>
-        <div class="container">
-            <div class="hero">
-                <div class="hero-image">
-                    <img src="https://avatars.githubusercontent.com/u/jorgesmk?v=4" alt="Jorge Luis Simocovski" loading="lazy">
+    <nav id="navbar">
+        <ul class="nav-links">
+            <li><a href="#about"><span class="nav-number">01.</span>Sobre</a></li>
+            <li><a href="#experience"><span class="nav-number">02.</span>Experiência</a></li>
+            <li><a href="#work"><span class="nav-number">03.</span>Work</a></li>
+            <li><a href="#contact"><span class="nav-number">04.</span>Contato</a></li>
+            <li><a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" class="nav-resume">Resume</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main>
+        <!-- ============================================
+             HERO SECTION
+             ============================================ -->
+        <section class="hero">
+            <div class="hero-intro">Olá, meu nome é</div>
+            <h1>Jorge Luis Simocovski.</h1>
+            <h2>Transformo dados em produtos escaláveis.</h2>
+            <p class="hero-bio">Sou um Technical Product Manager com background de liderança em QA. Atuo na interseção entre Engenharia e Negócio para reduzir incertezas técnicas e acelerar entregas de alto impacto no Itaú Unibanco.</p>
+            <a href="#work" class="hero-cta">Confira meu Track Record!</a>
+        </section>
+
+        <!-- ============================================
+             ABOUT SECTION
+             ============================================ -->
+        <section id="about">
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Minha jornada começou na engenharia de qualidade, onde aprendi que a verdadeira eficiência não é apenas encontrar bugs, mas preveni-los através de design e dados.</p>
+                    <p>Hoje, uso essa 'vantagem injusta' técnica para liderar produtos de plataforma, garantindo que a estratégia de negócio seja tecnicamente viável e escalável desde o dia 1.</p>
+                    <p>Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:</p>
+
+                    <div class="skills-grid">
+                        <div class="skill-item">Product Discovery</div>
+                        <div class="skill-item">SQL & Athena</div>
+                        <div class="skill-item">Amazon QuickSight</div>
+                        <div class="skill-item">AWS Cloud Practitioner</div>
+                        <div class="skill-item">GenAI & Agentes</div>
+                        <div class="skill-item">CI/CD Strategy</div>
+                    </div>
                 </div>
-                <div class="hero-text">
-                    <h1>Jorge Luis Simocovski</h1>
-                    <h2>Technical Product Manager | QA Leadership</h2>
-                    <p class="hero-slogan">"Ser o cargo antes de ter o cargo."</p>
-                    <p class="hero-bio">Transformo qualidade e dados em produtos escaláveis. Atuo na interseção entre Engenharia e Negócio para reduzir incertezas e acelerar entregas.</p>
-                    <div class="hero-ctas">
-                        <a href="#track-record" class="btn btn-primary">Ver Track Record</a>
-                        <a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                            <i class="fab fa-linkedin"></i> LinkedIn
+
+                <div class="about-photo">
+                    <div class="photo-border"></div>
+                    <div class="photo-container">
+                        <img src="https://avatars.githubusercontent.com/u/jorgesmk?v=4" alt="Jorge Simocovski" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             EXPERIENCE SECTION
+             ============================================ -->
+        <section id="experience">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">Experiência Profissional</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="experience-content">
+                <div class="experience-tabs">
+                    <button class="tab-button active" onclick="switchTab(event, 'itau')">Itaú Unibanco</button>
+                    <button class="tab-button" onclick="switchTab(event, 'walmart')">Walmart Brasil</button>
+                </div>
+
+                <div>
+                    <div id="itau" class="experience-content-tabs active">
+                        <div class="exp-title">Technical Product Manager / Senior Eng. Lead</div>
+                        <div class="exp-subtitle">Itaú Unibanco · Jun 2023 - Presente</div>
+                        <div class="exp-bullets">
+                            <div class="exp-bullet">Liderança de produto na plataforma de Data Mesh, focando em governança e escalabilidade.</div>
+                            <div class="exp-bullet">Implementação estratégica de Agentes de GenAI no CI/CD, reduzindo bugs críticos em 65% (KR Oficial).</div>
+                            <div class="exp-bullet">Gestão de stakeholders técnicos e de negócio para priorização de backlog baseada em dados.</div>
+                        </div>
+                    </div>
+
+                    <div id="walmart" class="experience-content-tabs">
+                        <div class="exp-title">Product Owner</div>
+                        <div class="exp-subtitle">Walmart Brasil · Jul 2016 - Fev 2019</div>
+                        <div class="exp-bullets">
+                            <div class="exp-bullet">Gestão de backlog e roadmap para o e-commerce de alta escala.</div>
+                            <div class="exp-bullet">Definição de histórias de usuário e alinhamento entre times de negócio e desenvolvimento.</div>
+                            <div class="exp-bullet">Implementação de OKRs e métricas de impacto em toda a organização.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             WORK SECTION
+             ============================================ -->
+        <section id="work">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Algumas Coisas que Construí</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- PROJECT 1 -->
+            <div class="project">
+                <div class="project-image">
+                    <div class="project-metric">1.5k Acessos<br>100% Autonomia</div>
+                </div>
+                <div>
+                    <div class="project-featured">Featured Project</div>
+                    <h3 class="project-title">Data-as-a-Product</h3>
+                    <p class="project-description">Transformação de métricas de qualidade em um produto de dados self-service, eliminando gargalos manuais para todas as squads. Implementação de dashboards em QuickSight com governança centralizada.</p>
+                    <div class="project-tech">
+                        <span>Analytics</span>
+                        <span>QuickSight</span>
+                        <span>SQL</span>
+                        <span>Athena</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/jorgesmk" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jorgesimocovski/" class="project-link" title="External">
+                            <i class="fas fa-external-link-alt"></i>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <!-- ============================================
-         VANTAGENS COMPETITIVAS
-         ============================================ -->
-    <section class="advantages-section">
-        <div class="container">
-            <h2>Meu Diferencial</h2>
-            <div class="advantages-grid">
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="advantage-title">Redução de Incerteza</h3>
-                    <p class="advantage-text">Antecipação de riscos técnicos através de métricas e dados estruturados.</p>
+            <!-- PROJECT 2 -->
+            <div class="project reversed">
+                <div class="project-image">
+                    <div class="project-metric">-65% Bugs<br>KR Oficial</div>
                 </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-database"></i>
+                <div style="direction: ltr;">
+                    <div class="project-featured">Featured Project</div>
+                    <h3 class="project-title">AI-Driven Quality Agent</h3>
+                    <p class="project-description">Implementação de agentes de IA no pipeline de CI/CD para revisão de código automática, escalando a segurança e eficiência. Redução de bugs críticos em produção em 65% e elevação de padrões técnicos.</p>
+                    <div class="project-tech">
+                        <span>GenAI</span>
+                        <span>Python</span>
+                        <span>CI/CD</span>
+                        <span>GitHub Actions</span>
                     </div>
-                    <h3 class="advantage-title">Fluência em Dados</h3>
-                    <p class="advantage-text">Autonomia em SQL & QuickSight para decisões baseadas em evidências.</p>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-bridge"></i>
-                    </div>
-                    <h3 class="advantage-title">Ponte Técnica</h3>
-                    <p class="advantage-text">Tradução de requisitos em viabilidade entre Produto e Engenharia.</p>
-                </div>
-
-                <div class="advantage-card">
-                    <div class="advantage-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3 class="advantage-title">Visão End-to-End</h3>
-                    <p class="advantage-text">Foco na jornada completa do usuário e impacto mensurável.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-         TRACK RECORD (IMPACTO)
-         ============================================ -->
-    <section class="track-record-section" id="track-record">
-        <div class="container">
-            <h2>Track Record de Impacto</h2>
-            <div class="impact-cards">
-                <div class="impact-card">
-                    <div>
-                        <p class="impact-label">Dados & Autonomia</p>
-                        <p class="impact-number">1.5k</p>
-                        <p class="impact-label">acessos em 10 meses</p>
-                    </div>
-                    <div>
-                        <h3 class="impact-title">Data-as-a-Product</h3>
-                        <p class="impact-description">Democratização de dados com QuickSight, gerando 100% de autonomia para as squads em decisões baseadas em métricas.</p>
-                    </div>
-                </div>
-
-                <div class="impact-card">
-                    <div>
-                        <p class="impact-label">Qualidade Preventiva</p>
-                        <p class="impact-number">-65%</p>
-                        <p class="impact-label">redução de bugs</p>
-                    </div>
-                    <div>
-                        <h3 class="impact-title">AI-Driven Quality</h3>
-                        <p class="impact-description">Agentes de IA no CI/CD para code review inteligente. Iniciativa convertida em KR oficial da engenharia.</p>
-                    </div>
-                </div>
-
-                <div class="impact-card">
-                    <div>
-                        <p class="impact-label">Cultura & Escala</p>
-                        <p class="impact-number">85%</p>
-                        <p class="impact-label">cobertura de testes</p>
-                    </div>
-                    <div>
-                        <h3 class="impact-title">Engenharia Autônoma</h3>
-                        <p class="impact-description">De dependência de QA centralizada para autonomia total das squads. Shift-left testing + empoderamento.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/jorgesmk" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jorgesimocovski/" class="project-link" title="External">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ============================================
+             CONTACT SECTION
+             ============================================ -->
+        <section id="contact">
+            <div class="contact-content">
+                <div class="contact-number">04. Qual o Próximo Passo?</div>
+                <h2 class="contact-title">Vamos Conversar.</h2>
+                <p class="contact-text">Estou sempre aberto a discutir novas oportunidades de liderança de produto, especialmente onde desafios técnicos complexos encontram a estratégia de negócio. Minha caixa de entrada está aberta.</p>
+                <a href="mailto:jorgesmk@gmail.com" class="contact-cta">Diga Olá</a>
+            </div>
+        </section>
+    </main>
 
     <!-- ============================================
-         EXPERIÊNCIA & SKILLS
+         SIDEBARS
          ============================================ -->
-    <section class="experience-skills-section">
-        <div class="container">
-            <h2>Experiência & Competências</h2>
-            <div class="exp-skills-grid">
-                <!-- EXPERIÊNCIA -->
-                <div class="experience-card">
-                    <h3><i class="fas fa-briefcase"></i> Experiência</h3>
-                    
-                    <div class="experience-item">
-                        <p class="experience-role">Senior Software Engineer (Platform PM)</p>
-                        <p class="experience-company">Itaú Unibanco — Jun 2023 – Presente</p>
-                        <p class="experience-description">Liderança em Data Mesh, implementação de GenAI para Code Review e gestão de qualidade baseada em dados. Elevei cobertura de testes de 30% para 85%.</p>
-                    </div>
+    <div class="sidebar-social">
+        <a href="https://github.com/jorgesmk" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://twitter.com/jorgesmk" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
 
-                    <div class="experience-item">
-                        <p class="experience-role">Product Owner</p>
-                        <p class="experience-company">Walmart Brasil — Jul 2016 – Fev 2019</p>
-                        <p class="experience-description">Gestão de backlog e priorização de roadmap em e-commerce de alta escala com 3+ squads.</p>
-                    </div>
-
-                    <div class="experience-item">
-                        <p class="experience-role">QA Lead → Technical Quality Manager</p>
-                        <p class="experience-company">Múltiplas Organizações — 2015 – 2023</p>
-                        <p class="experience-description">Progressão de QA Specialist a liderança de qualidade; shift-left testing e automação estratégica.</p>
-                    </div>
-                </div>
-
-                <!-- SKILLS -->
-                <div class="skills-card">
-                    <h3><i class="fas fa-code"></i> Stack Técnica</h3>
-                    
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-top: 1rem; margin-bottom: 0.75rem;">
-                        <i class="fas fa-star"></i> Destaques (Expertise)
-                    </h4>
-                    <div class="skills-list">
-                        <span class="skill-badge highlight">Amazon Athena</span>
-                        <span class="skill-badge highlight">QuickSight</span>
-                        <span class="skill-badge highlight">AWS Cloud</span>
-                        <span class="skill-badge highlight">Data Mesh</span>
-                    </div>
-
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">
-                        <i class="fas fa-tools"></i> Ferramentas & Metodologia
-                    </h4>
-                    <div class="skills-list">
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">Jira</span>
-                        <span class="skill-badge">CI/CD</span>
-                        <span class="skill-badge">Product Discovery</span>
-                        <span class="skill-badge">OKRs</span>
-                        <span class="skill-badge">Shift-Left Testing</span>
-                        <span class="skill-badge">Code Review</span>
-                        <span class="skill-badge">Python</span>
-                    </div>
-
-                    <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: 0.75rem;">
-                        <i class="fas fa-certificate"></i> Certificações
-                    </h4>
-                    <div class="skills-list">
-                        <span class="skill-badge">AWS Cloud Practitioner</span>
-                        <span class="skill-badge">Product Management (280 Group)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <a href="mailto:jorgesmk@gmail.com" class="sidebar-email">jorgesmk@gmail.com</a>
 
     <!-- ============================================
-         FOOTER
+         SCRIPTS
          ============================================ -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h2>Pronto para liderar a evolução do seu produto?</h2>
-                <div class="footer-links">
-                    <a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" rel="noopener noreferrer" class="footer-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:jorgesmk@gmail.com" class="footer-link">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://github.com/jorgesmk" target="_blank" rel="noopener noreferrer" class="footer-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2026 Jorge Simocovski. Todos os direitos reservados.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Tab switching
+        function switchTab(event, tabId) {
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.experience-content-tabs');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -790,8 +973,27 @@
             });
         });
 
-        // Analytics tracking (optional)
-        console.log('Portfolio carregado com sucesso!');
+        // Active nav link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
