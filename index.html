@@ -195,6 +195,14 @@
             line-height: 1.1;
         }
 
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--accent-neon);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
         .hero-bio {
             max-width: 550px;
             color: var(--text-slate);
@@ -275,6 +283,34 @@
             grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
             margin-top: 2rem;
+        }
+
+        .skills-title {
+            color: var(--text-white);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .skills-pillar {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .pillar-title {
+            color: var(--accent-neon);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         .skill-item {
@@ -712,6 +748,16 @@
                 font-size: 1.75rem;
             }
 
+            .hero-tagline {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .skills-section {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .section-title {
                 font-size: 1.5rem;
             }
@@ -775,10 +821,11 @@
              ============================================ -->
         <section class="hero">
             <div class="hero-intro">Olá, meu nome é</div>
-            <h1>Jorge Luis Simocovski.</h1>
-            <h2>Transformo dados em produtos escaláveis.</h2>
-            <p class="hero-bio">Sou um Technical Product Manager com background de liderança em QA. Atuo na interseção entre Engenharia e Negócio para reduzir incertezas técnicas e acelerar entregas de alto impacto no Itaú Unibanco.</p>
-            <a href="#work" class="hero-cta">Confira meu Track Record!</a>
+            <h1>Jorge Luis Simocovski</h1>
+            <h2>Technical Product Manager | QA Leadership</h2>
+            <h3 class="hero-tagline">Transformo qualidade de software em decisão de produto baseada em dados.</h3>
+            <p class="hero-bio">Atuo na interseção entre Engenharia e Negócio. Especialista em reduzir incertezas técnicas e escalar governança através de dados e automação no Itaú Unibanco.</p>
+            <a href="#work" class="hero-cta">Ver Track Record</a>
         </section>
 
         <!-- ============================================
@@ -793,17 +840,31 @@
 
             <div class="about-content">
                 <div class="about-text">
-                    <p>Minha jornada começou na engenharia de qualidade, onde aprendi que a verdadeira eficiência não é apenas encontrar bugs, mas preveni-los através de design e dados.</p>
-                    <p>Hoje, uso essa 'vantagem injusta' técnica para liderar produtos de plataforma, garantindo que a estratégia de negócio seja tecnicamente viável e escalável desde o dia 1.</p>
-                    <p>Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente:</p>
-
-                    <div class="skills-grid">
-                        <div class="skill-item">Product Discovery</div>
-                        <div class="skill-item">SQL & Athena</div>
-                        <div class="skill-item">Amazon QuickSight</div>
-                        <div class="skill-item">AWS Cloud Practitioner</div>
-                        <div class="skill-item">GenAI & Agentes</div>
-                        <div class="skill-item">CI/CD Strategy</div>
+                    <p>Minha base é técnica (Engenharia/QA), mas meu foco é o produto. Não olho apenas para features, olho para a saúde do ecossistema de desenvolvimento, usando SQL, AWS e IA para garantir entregas previsíveis e escaláveis.</p>
+                    
+                    <h3 class="skills-title">Competências Estratégicas</h3>
+                    
+                    <div class="skills-section">
+                        <div class="skills-pillar">
+                            <h4 class="pillar-title">Produto</h4>
+                            <div class="skill-item">Discovery Técnico</div>
+                            <div class="skill-item">Priorização por Dados</div>
+                            <div class="skill-item">OKRs</div>
+                        </div>
+                        <div class="skills-pillar">
+                            <h4 class="pillar-title">Dados</h4>
+                            <div class="skill-item">SQL</div>
+                            <div class="skill-item">Amazon Athena</div>
+                            <div class="skill-item">QuickSight</div>
+                            <div class="skill-item">Métricas DORA</div>
+                        </div>
+                        <div class="skills-pillar">
+                            <h4 class="pillar-title">Engenharia</h4>
+                            <div class="skill-item">AWS Cloud Practitioner</div>
+                            <div class="skill-item">CI/CD</div>
+                            <div class="skill-item">GenAI Agents</div>
+                            <div class="skill-item">Python</div>
+                        </div>
                     </div>
                 </div>
 
@@ -869,12 +930,12 @@
             <!-- PROJECT 1 -->
             <div class="project">
                 <div class="project-image">
-                    <div class="project-metric">1.5k Acessos<br>100% Autonomia</div>
+                    <div class="project-metric">1.5k Acessos</div>
                 </div>
                 <div>
                     <div class="project-featured">Featured Project</div>
                     <h3 class="project-title">Data-as-a-Product</h3>
-                    <p class="project-description">Transformação de métricas de qualidade em um produto de dados self-service, eliminando gargalos manuais para todas as squads. Implementação de dashboards em QuickSight com governança centralizada.</p>
+                    <p class="project-description">Democratização de dados com QuickSight. 100% de autonomia para as squads.</p>
                     <div class="project-tech">
                         <span>Analytics</span>
                         <span>QuickSight</span>
@@ -895,17 +956,43 @@
             <!-- PROJECT 2 -->
             <div class="project reversed">
                 <div class="project-image">
-                    <div class="project-metric">-65% Bugs<br>KR Oficial</div>
+                    <div class="project-metric">-65% Bugs Críticos</div>
                 </div>
                 <div style="direction: ltr;">
                     <div class="project-featured">Featured Project</div>
-                    <h3 class="project-title">AI-Driven Quality Agent</h3>
-                    <p class="project-description">Implementação de agentes de IA no pipeline de CI/CD para revisão de código automática, escalando a segurança e eficiência. Redução de bugs críticos em produção em 65% e elevação de padrões técnicos.</p>
+                    <h3 class="project-title">AI-Driven Quality</h3>
+                    <p class="project-description">Agente de IA no CI/CD para Code Review. Iniciativa convertida em KR Oficial.</p>
                     <div class="project-tech">
                         <span>GenAI</span>
                         <span>Python</span>
                         <span>CI/CD</span>
                         <span>GitHub Actions</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/jorgesmk" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jorgesimocovski/" class="project-link" title="External">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project">
+                <div class="project-image">
+                    <div class="project-metric">Shift-Left</div>
+                </div>
+                <div>
+                    <div class="project-featured">Featured Project</div>
+                    <h3 class="project-title">Engenharia Autônoma</h3>
+                    <p class="project-description">Evolução do modelo de QA para engenharia autônoma. Cobertura de testes de 30% para 85%.</p>
+                    <div class="project-tech">
+                        <span>QA Strategy</span>
+                        <span>Automation</span>
+                        <span>Testing</span>
+                        <span>Governance</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/jorgesmk" class="project-link" title="GitHub">
