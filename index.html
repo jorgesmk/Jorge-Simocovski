@@ -64,77 +64,83 @@
         }
 
         /* ============================================
-           NAVBAR
+           NAVBAR ESTILIZADA
            ============================================ */
-        nav {
+        #navbar {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
             width: 100%;
-            padding: 1.5rem 2rem;
+            height: 80px;
+            background-color: #112240;
+            border-bottom: 1px solid #233554;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 3rem;
+            padding: 0 50px;
             z-index: 1000;
-            background: #112240;
-            border-bottom: 1px solid #233554;
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
         }
 
-        nav.scrolled {
-            background: #112240;
-            border-bottom: 1px solid #233554;
-        }
-
-        .nav-logo {
-            color: var(--accent-neon);
-            font-weight: 800;
-            font-size: 0.85rem;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.15em;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-            border: 1px solid var(--accent-neon);
-            background: rgba(255, 95, 31, 0.1);
-            padding: 0.5rem 0.75rem;
+        .logo-badge {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-weight: bold;
+            color: #FF5F1F;
+            border: 1px solid #FF5F1F;
+            padding: 5px 12px;
             border-radius: 4px;
-            display: inline-block;
+            background: rgba(255, 95, 31, 0.1);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
 
-        .nav-logo:hover {
+        .logo-badge:hover {
             background: rgba(255, 95, 31, 0.2);
             box-shadow: 0 0 15px rgba(255, 95, 31, 0.4);
             transform: scale(1.05);
         }
 
-        .nav-links {
+        #navbar nav {
             display: flex;
-            gap: 2.5rem;
+            justify-content: space-between;
             align-items: center;
-            list-style: none;
+            gap: 3rem;
+            width: 100%;
+            padding: 0;
+            background: transparent;
+            border: none;
+            position: static;
+            height: auto;
+            box-shadow: none;
         }
 
-        .nav-links a {
+        #navbar nav ul {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar nav ul li a {
             color: var(--text-slate);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.85rem;
-            position: relative;
             transition: color 0.3s ease;
         }
 
-        .nav-links a .nav-number {
+        #navbar nav ul li a .mono-number {
             color: var(--accent-neon);
-            margin-right: 0.5rem;
+            margin-right: 0.3rem;
+            font-family: 'Fira Code', monospace;
         }
 
-        .nav-links a:hover {
+        #navbar nav ul li a:hover {
             color: var(--accent-neon);
         }
 
-        .nav-resume {
+        .resume-btn {
             border: 1px solid var(--accent-neon);
             color: var(--accent-neon);
             padding: 0.6rem 1rem;
@@ -143,35 +149,150 @@
             font-weight: 600;
             font-size: 0.85rem;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
-        .nav-resume:hover {
+        .resume-btn:hover {
             background: rgba(255, 95, 31, 0.1);
             box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
         }
 
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
-                gap: 1.5rem;
-            }
+        /* ============================================
+           HERO SECTION LADO A LADO
+           ============================================ */
+        #hero {
+            background-color: #0a192f;
+            min-height: 100vh;
+            padding-top: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 4rem;
+        }
 
-            .nav-links {
-                gap: 1.5rem;
-            }
+        .hero-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 20px;
+            gap: 60px;
+        }
 
-            .nav-links a .nav-number {
-                display: none;
-            }
+        .hero-left {
+            flex: 1;
+            max-width: 650px;
+        }
+
+        .hero-right {
+            flex: 0 0 350px;
+            position: relative;
+        }
+
+        .greeting {
+            color: var(--accent-neon);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .big-name {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .big-role {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-light-slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .big-role .highlight {
+            color: var(--accent-neon);
+        }
+
+        .thesis {
+            font-size: 1.25rem;
+            color: var(--accent-neon);
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .bio {
+            max-width: 550px;
+            color: var(--text-slate);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            border: 2px solid var(--accent-neon);
+            color: var(--accent-neon);
+            padding: 1rem 1.75rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .primary-btn:hover {
+            background: rgba(255, 95, 31, 0.1);
+            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
+            transform: translateX(4px);
+        }
+
+        .profile-frame {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border-radius: 4px;
+            background-color: #FF5F1F;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            position: relative;
+            top: -15px;
+            left: -15px;
+            border: 2px solid #FF5F1F;
+            transition: all 0.3s ease;
+            filter: grayscale(100%) contrast(1.1);
+        }
+
+        .profile-frame:hover img {
+            top: -8px;
+            left: -8px;
+            filter: none;
         }
 
         /* ============================================
            CONTAINER & MAIN LAYOUT
            ============================================ */
         main {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0;
         }
 
         section {
@@ -183,121 +304,53 @@
         }
 
         /* ============================================
-           HERO SECTION
+           MOBILE RESPONSIVO
            ============================================ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 120px;
-            padding-bottom: 4rem;
-            gap: 4rem;
-        }
+        @media (max-width: 900px) {
+            .hero-wrapper {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 40px;
+            }
 
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 2rem;
-            gap: 4rem;
-        }
+            .hero-right {
+                margin-bottom: 40px;
+            }
 
-        .hero-content,
-        .hero-text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+            #navbar {
+                padding: 0 20px;
+                height: auto;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
 
-        .hero-image {
-            flex: 0 0 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            .logo-badge {
+                margin-bottom: 1rem;
+            }
 
-        .img-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
+            #navbar nav {
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 100%;
+            }
 
-        .img-wrapper img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 4px;
-        }
+            #navbar nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
 
-        .hero-intro,
-        .greeting {
-            color: var(--accent-neon);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            letter-spacing: 0.1em;
-        }
+            .big-name {
+                font-size: 2.5rem;
+            }
 
-        .hero h1 {
-            font-size: 4.5rem;
-            font-weight: 800;
-            color: var(--text-white);
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
-        }
+            .big-role {
+                font-size: 1.75rem;
+            }
 
-        .hero h2 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--text-light-slate);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-tagline,
-        .hero-text h3 {
-            font-size: 1.25rem;
-            color: var(--accent-neon);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            display: block;
-        }
-
-        .hero-bio,
-        .bio {
-            max-width: 550px;
-            color: var(--text-slate);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .hero-cta,
-        .cta-button {
-            display: inline-block;
-            border: 2px solid var(--accent-neon);
-            color: var(--accent-neon);
-            padding: 1rem 1.75rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            width: fit-content;
-        }
-
-        .hero-cta:hover,
-        .cta-button:hover {
-            background: rgba(255, 95, 31, 0.1);
-            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
-            transform: translateX(4px);
+            .thesis {
+                font-size: 1rem;
+            }
         }
 
         /* ============================================
@@ -887,16 +940,18 @@
     <!-- ============================================
          NAVBAR
          ============================================ -->
-    <nav id="navbar">
-        <div class="nav-logo">SMK</div>
-        <ul class="nav-links">
-            <li><a href="#about"><span class="nav-number">01.</span>Sobre</a></li>
-            <li><a href="#experience"><span class="nav-number">02.</span>Experiência</a></li>
-            <li><a href="#work"><span class="nav-number">03.</span>Work</a></li>
-            <li><a href="#contact"><span class="nav-number">04.</span>Contato</a></li>
-            <li><a href="https://www.linkedin.com/in/jorgesimocovski/" target="_blank" class="nav-resume">Resume</a></li>
-        </ul>
-    </nav>
+    <header id="navbar">
+        <div class="logo-badge">SMK</div>
+        <nav>
+            <ul>
+                <li><a href="#about"><span class="mono-number">01.</span> Sobre</a></li>
+                <li><a href="#experience"><span class="mono-number">02.</span> Experiência</a></li>
+                <li><a href="#projects"><span class="mono-number">03.</span> Work</a></li>
+                <li><a href="#contact"><span class="mono-number">04.</span> Contato</a></li>
+            </ul>
+            <a href="https://www.linkedin.com/in/jorgesimocovski/" class="resume-btn" target="_blank">Resume</a>
+        </nav>
+    </header>
 
     <!-- ============================================
          MAIN CONTENT
@@ -905,23 +960,24 @@
         <!-- ============================================
              HERO SECTION
              ============================================ -->
-        <section id="hero" class="hero">
-            <div class="hero-container">
-                <div class="hero-text hero-content">
-                    <p class="greeting hero-intro">Olá, meu nome é</p>
-                    <h1>Jorge Luis Simocovski.</h1>
-                    <h2>Technical Product Manager | QA Leadership</h2>
-                    <h3>Transformo qualidade de software em decisão de produto baseada em dados.</h3>
-                    <p class="bio hero-bio">Atuo na interseção entre Engenharia e Negócio. Especialista em reduzir incertezas técnicas e escalar governança através de dados e automação no Itaú Unibanco.</p>
-                    <a href="#work" class="cta-button hero-cta">Ver Track Record</a>
+        <section id="hero">
+            <div class="hero-wrapper">
+                <div class="hero-left">
+                    <p class="greeting">Olá, meu nome é</p>
+                    <h1 class="big-name">Jorge Luis Simocovski.</h1>
+                    <h2 class="big-role">Technical Product Manager <span class="highlight">| QA Leadership</span></h2>
+                    <p class="thesis">Transformo qualidade de software em decisão de produto baseada em dados.</p>
+                    <p class="bio">
+                        Atuo na interseção entre Engenharia e Negócio. Especialista em reduzir incertezas técnicas e escalar governança através de dados e automação no Itaú Unibanco.
+                    </p>
+                    <div class="cta-container">
+                        <a href="#projects" class="primary-btn">Ver Track Record</a>
+                    </div>
                 </div>
 
-                <div class="hero-image">
-                    <div class="img-wrapper about-photo">
-                        <div class="photo-border"></div>
-                        <div class="photo-container">
-                            <img src="/Jorge-Simocovski/assets/images/jorge.jpg" alt="Jorge Simocovski" loading="lazy" decoding="async" class="photo-responsive">
-                        </div>
+                <div class="hero-right">
+                    <div class="profile-frame">
+                        <img src="./assets/images/jorge.jpg" alt="Jorge Simocovski Profile">
                     </div>
                 </div>
             </div>
