@@ -472,6 +472,128 @@
             font-weight: bold;
         }
 
+        /* Timeline Summary */
+        .exp-timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 95, 31, 0.05);
+            border-radius: 8px;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent-neon);
+        }
+
+        .timeline-period {
+            color: var(--accent-neon);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .timeline-role {
+            color: var(--text-light-slate);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .timeline-title {
+            color: var(--text-slate);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Current Experience Detail */
+        .experience-detailed {
+            margin-bottom: 3rem;
+        }
+
+        .exp-current {
+            background: rgba(255, 95, 31, 0.02);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-neon);
+        }
+
+        .exp-role-title {
+            color: var(--text-white);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-role-subtitle {
+            color: var(--accent-neon);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-company {
+            color: var(--text-light-slate);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-description {
+            color: var(--text-slate);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .exp-note {
+            color: var(--text-slate);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 95, 31, 0.08);
+            border-radius: 4px;
+            border-left: 2px solid var(--accent-neon);
+        }
+
+        .exp-section-title {
+            color: var(--text-white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem;
+        }
+
+        /* Previous Experiences */
+        .experience-previous {
+            margin-top: 2rem;
+        }
+
+        .exp-previous-title {
+            color: var(--text-white);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .exp-previous-intro {
+            color: var(--text-slate);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-previous-conclusion {
+            color: var(--text-slate);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
         /* ============================================
            PROJECTS SECTION
            ============================================ */
@@ -659,28 +781,9 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .experience-content {
+            .exp-timeline {
                 grid-template-columns: 1fr;
-            }
-
-            .experience-tabs {
-                flex-direction: row;
-                border-left: none;
-                border-bottom: 2px solid rgba(255, 95, 31, 0.2);
-                padding-bottom: 0;
-                overflow-x: auto;
-            }
-
-            .tab-button {
-                border-left: none;
-                border-bottom: 2px solid transparent;
-                margin: 0;
-                margin-bottom: -2px;
-            }
-
-            .tab-button.active {
-                border-left: none;
-                border-bottom-color: var(--accent-neon);
+                gap: 1rem;
             }
 
             .project {
@@ -903,33 +1006,75 @@
                 <div class="section-line"></div>
             </div>
 
-            <div class="experience-content">
-                <div class="experience-tabs">
-                    <button class="tab-button active" onclick="switchTab(event, 'itau')">Itaú Unibanco</button>
-                    <button class="tab-button" onclick="switchTab(event, 'walmart')">Walmart Brasil</button>
+            <!-- Timeline Summary -->
+            <div class="exp-timeline">
+                <div class="timeline-item">
+                    <span class="timeline-period">2023 - Presente</span>
+                    <span class="timeline-role">Itaú Unibanco</span>
+                    <span class="timeline-title">Senior Software Engineer (Platform PM & Quality Lead)</span>
                 </div>
+                <div class="timeline-item">
+                    <span class="timeline-period">2016 - 2019</span>
+                    <span class="timeline-role">Walmart Brasil</span>
+                    <span class="timeline-title">Product Owner</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-period">2010 - 2015</span>
+                    <span class="timeline-role">Várias empresas</span>
+                    <span class="timeline-title">Qualidade, Sistemas & Produto</span>
+                </div>
+            </div>
 
-                <div>
-                    <div id="itau" class="experience-content-tabs active">
-                        <div class="exp-title">Technical Product Manager / Senior Eng. Lead</div>
-                        <div class="exp-subtitle">Itaú Unibanco · Jun 2023 - Presente</div>
-                        <div class="exp-bullets">
-                            <div class="exp-bullet">Liderança de produto na plataforma de Data Mesh, focando em governança e escalabilidade.</div>
-                            <div class="exp-bullet">Implementação estratégica de Agentes de GenAI no CI/CD, reduzindo bugs críticos em 65% (KR Oficial).</div>
-                            <div class="exp-bullet">Gestão de stakeholders técnicos e de negócio para priorização de backlog baseada em dados.</div>
-                        </div>
+            <!-- Current Experience - Detailed -->
+            <div class="experience-detailed">
+                <div class="exp-current">
+                    <h3 class="exp-role-title">Senior Software Engineer</h3>
+                    <p class="exp-role-subtitle">Atuando como Platform PM & Quality Lead</p>
+                    <p class="exp-company">Itaú Unibanco · Jun 2023 - Presente</p>
+                    
+                    <p class="exp-description">
+                        Atuo na liderança de iniciativas estratégicas na plataforma de Data Mesh, operando na interseção entre Produto, Engenharia e Dados.
+                    </p>
+                    
+                    <p class="exp-note">
+                        Embora meu cargo formal seja em engenharia, minha atuação diária envolve responsabilidades típicas de Product Analyst e Product Manager técnico, como definição de OKRs, priorização orientada a impacto e governança de qualidade.
+                    </p>
+                    
+                    <h4 class="exp-section-title">Principais Responsabilidades</h4>
+                    <div class="exp-bullets">
+                        <div class="exp-bullet">Definição e acompanhamento de OKRs e KPIs de qualidade para múltiplas squads, apoiando decisões de produto baseadas em dados.</div>
+                        <div class="exp-bullet">Atuação como ponto focal entre engenharia, dados e negócio para priorização de backlog e mitigação de riscos técnicos.</div>
+                        <div class="exp-bullet">Liderança da adoção de IA Generativa para Code Review no CI/CD, reduzindo gargalos técnicos e incidentes em produção.</div>
+                        <div class="exp-bullet">Definição de padrões mínimos de qualidade e confiabilidade para produtos de dados em ambiente distribuído.</div>
+                        <div class="exp-bullet">Facilitação de alinhamento entre arquitetos, líderes técnicos e squads em decisões críticas de produto.</div>
                     </div>
-
-                    <div id="walmart" class="experience-content-tabs">
-                        <div class="exp-title">Product Owner</div>
-                        <div class="exp-subtitle">Walmart Brasil · Jul 2016 - Fev 2019</div>
-                        <div class="exp-bullets">
-                            <div class="exp-bullet">Gestão de backlog e roadmap para o e-commerce de alta escala.</div>
-                            <div class="exp-bullet">Definição de histórias de usuário e alinhamento entre times de negócio e desenvolvimento.</div>
-                            <div class="exp-bullet">Implementação de OKRs e métricas de impacto em toda a organização.</div>
-                        </div>
+                    
+                    <h4 class="exp-section-title">Impactos Observados</h4>
+                    <div class="exp-bullets">
+                        <div class="exp-bullet">Redução significativa de bugs críticos e retrabalho.</div>
+                        <div class="exp-bullet">Melhora no lead time e previsibilidade das entregas.</div>
+                        <div class="exp-bullet">Aumento da maturidade dos times em práticas de qualidade e governança.</div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Previous Experiences -->
+            <div class="experience-previous">
+                <h3 class="exp-previous-title">Experiências Anteriores em Produto, Sistemas e Qualidade (2010 — 2020)</h3>
+                
+                <p class="exp-previous-intro">
+                    Ao longo da minha carreira, atuei em diferentes empresas e contextos enterprise (varejo, telecom e financeiro), construindo uma base sólida em qualidade, análise de sistemas e produtos internos.
+                </p>
+                
+                <div class="exp-bullets">
+                    <div class="exp-bullet"><strong>Product Owner (B2E)</strong> no Walmart Brasil, liderando backlog, refinamento de requisitos e priorização baseada em valor de negócio.</div>
+                    <div class="exp-bullet"><strong>Consultoria em qualidade e análise de sistemas</strong> em ambientes complexos, atuando próximo de produto e áreas de negócio.</div>
+                    <div class="exp-bullet"><strong>Forte atuação em mitigação de riscos</strong>, critérios de aceite e validação de sistemas críticos e integrações complexas.</div>
+                </div>
+                
+                <p class="exp-previous-conclusion">
+                    Essa trajetória sustenta minha atuação atual em produto, permitindo antecipar riscos técnicos e apoiar decisões com dados.
+                </p>
             </div>
         </section>
 
