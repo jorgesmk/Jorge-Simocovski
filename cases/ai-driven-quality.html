@@ -122,49 +122,32 @@
 
         <section>
             <h2>Problema × Decisão × Impacto</h2>
-            <table border="1" cellpadding="8" cellspacing="0">
+            <table style="width:100%; border-collapse:collapse;">
                 <thead>
                     <tr>
-                        <th>Problema</th>
-                        <th>Decisão</th>
-                        <th>Impacto</th>
+                        <th style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">Problema</th>
+                        <th style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">Decisão</th>
+                        <th style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">Impacto</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Revisão de código manual e tardia, com retrabalho e bugs críticos.</td>
-                        <td>IA no code review e testes integrados por feature.</td>
-                        <td>65% de redução de bugs críticos em produção.</td>
+                        <td style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">Revisão de código manual e tardia, com retrabalho e bugs críticos.</td>
+                        <td style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">IA no code review e testes integrados por feature.</td>
+                        <td style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">65% de redução de bugs críticos em produção.</td>
                     </tr>
                     <tr>
-                        <td>Dificuldade para escalar mantendo qualidade e velocidade.</td>
-                        <td>Integração completa ao CI/CD com feedback imediato aos desenvolvedores.</td>
-                        <td>100% dos repositórios com IA e testes ativos; 2 KRs estratégicos atendidos (2024).</td>
+                        <td style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">Dificuldade para escalar mantendo qualidade e velocidade.</td>
+                        <td style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">Integração completa ao CI/CD com feedback imediato aos desenvolvedores.</td>
+                        <td style="border:1px solid rgba(0,0,0,0.12); padding:12px; vertical-align:top;">100% dos repositórios com IA e testes ativos; 2 KRs estratégicos atendidos (2024).</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section class="card">
-            <h2>Resumo executivo</h2>
-            <ul>
-                <li>Problema: Alto volume de bugs e retrabalho no fluxo de revisão de código.</li>
-                <li>Objetivo: [Preencher] Meta principal e resultado esperado.</li>
-                <li>Solução: Implementar agente de IA para Code Review integrado ao CI/CD visando eficiência e prevenção.</li>
-                <li>Trade-off: [Preencher] Decisão de custo/benefício principal.</li>
-                <li>Impacto: -65% bugs.</li>
-            </ul>
-        </section>
-
         <section>
             <h2>Contexto e problema</h2>
             <p>Processo de revisão de código majoritariamente manual e tardio. Erros evitáveis chegavam à produção, revisões geravam retrabalho e a engenharia enfrentava dificuldades para escalar mantendo qualidade e velocidade.</p>
-        </section>
-
-        <section>
-            <h2>Objetivo (incluindo métricas de sucesso)</h2>
-            <p>[Preencher] Objetivo principal do case.</p>
-            <p>[Preencher] Métricas de sucesso e OKR/KRs quando houver.</p>
         </section>
 
         <section>
@@ -208,7 +191,7 @@
 
         <section>
             <h2>Trade-off principal</h2>
-            <p>[Preencher] Trade-off principal assumido e racional.</p>
+            <p>Priorizamos prevenção no fluxo (shift-left) mesmo com maior esforço inicial de adoção e ajuste do pipeline, porque o ganho recorrente em redução de bugs e retrabalho compensaria no médio prazo.</p>
         </section>
 
         <section>
@@ -234,23 +217,20 @@
             </div>
         </section>
 
-        <section>
-            <h2>Impacto</h2>
-            <ul>
-                <li>-65% bugs.</li>
-                <li>[Preencher] Métrica secundária (adoção, autonomia ou tempo).</li>
-            </ul>
-        </section>
-
         <section class="card">
             <h2>Resultado-chave</h2>
             <p>A combinação de IA e testes integrados transformou qualidade em uma capacidade escalável e preventiva, elevando o padrão da engenharia sem comprometer velocidade. Mudança cultural: de correção tardia para prevenção contínua por feature.</p>
         </section>
 
         <section>
-            <h2>Próximos passos</h2>
-            <p>[Preencher] Próximas iniciativas ou evoluções.</p>
+            <h2>Aprendizados e replicabilidade</h2>
+            <ul>
+                <li>Adoção depende de feedback rápido: integrar no CI/CD foi tão importante quanto o agente de IA.</li>
+                <li>Governança leve acelera escala, desde que métricas e padrões estejam claros.</li>
+                <li>Shift-left reduz retrabalho, mas exige onboarding e alinhamento com liderança.</li>
+            </ul>
         </section>
+
     </main>
 
     <footer>
