@@ -1398,25 +1398,76 @@
     </script>
     <script>
         (function () {
+            function track(eventName, params) {
+                if (typeof gtag === 'function') {
+                    gtag('event', eventName, params);
+                }
+            }
+
+            let heroViewed = false;
+            let projectsViewed = false;
+
+            document.addEventListener('DOMContentLoaded', function () {
+                if (!heroViewed) {
+                    heroViewed = true;
+                    track('hero_view', {
+                        funnel_step: 1,
+                        page: window.location.pathname
+                    });
+                }
+            });
+
             const heroCta = document.querySelector('#hero .primary-btn');
             if (heroCta) {
                 heroCta.addEventListener('click', function () {
-                    if (typeof gtag !== 'function') return;
-                    gtag('event', 'hero_cta_click', {
+                    track('hero_cta_click', {
                         section: 'hero',
                         label: heroCta.innerText.trim()
                     });
                 });
             }
 
+            const projectsSection = document.getElementById('projects');
+            function fireProjectsView() {
+                if (projectsViewed) return;
+                projectsViewed = true;
+                track('projects_view', {
+                    funnel_step: 2,
+                    page: window.location.pathname,
+                    section_id: 'projects'
+                });
+            }
+
+            if (projectsSection && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+                            fireProjectsView();
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.35 });
+                observer.observe(projectsSection);
+            } else if (projectsSection) {
+                window.addEventListener('scroll', function onScroll() {
+                    const doc = document.documentElement;
+                    const scrollTop = doc.scrollTop;
+                    if (scrollTop >= projectsSection.offsetTop) {
+                        fireProjectsView();
+                        window.removeEventListener('scroll', onScroll);
+                    }
+                }, { passive: true });
+            }
+
             const projectCards = document.querySelectorAll('#projects .project');
             projectCards.forEach(function (card) {
                 card.addEventListener('click', function () {
-                    if (typeof gtag !== 'function') return;
                     const title = card.querySelector('.project-title');
-                    gtag('event', 'project_card_click', {
-                        section: 'projects',
-                        project_name: title ? title.innerText.trim() : ''
+                    track('project_card_click', {
+                        funnel_step: 3,
+                        page: window.location.pathname,
+                        project_name: title ? title.innerText.trim() : '',
+                        section_id: 'projects'
                     });
                 });
             });
@@ -1424,7 +1475,6 @@
             const portfolioLinks = document.querySelectorAll('a[href^="http"]');
             portfolioLinks.forEach(function (link) {
                 link.addEventListener('click', function () {
-                    if (typeof gtag !== 'function') return;
                     let section = 'header';
                     if (link.closest('footer')) {
                         section = 'footer';
@@ -1436,7 +1486,7 @@
                             section = sectionEl.id;
                         }
                     }
-                    gtag('event', 'portfolio_link_click', {
+                    track('portfolio_link_click', {
                         section: section
                     });
                 });
