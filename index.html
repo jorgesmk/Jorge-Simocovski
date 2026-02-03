@@ -1443,5 +1443,44 @@
             });
         })();
     </script>
+    <script>
+        (function () {
+            const thresholds = [25, 50, 75, 100];
+            const fired = new Set();
+            let ticking = false;
+
+            function getScrollPercent() {
+                const doc = document.documentElement;
+                const scrollTop = doc.scrollTop;
+                const scrollHeight = doc.scrollHeight;
+                const clientHeight = doc.clientHeight;
+                const maxScroll = scrollHeight - clientHeight;
+                if (maxScroll <= 0) return 100;
+                return (scrollTop / maxScroll) * 100;
+            }
+
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(function () {
+                    const percent = getScrollPercent();
+                    thresholds.forEach(function (threshold) {
+                        if (percent >= threshold && !fired.has(threshold)) {
+                            fired.add(threshold);
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'scroll_' + threshold, {
+                                    percent: threshold,
+                                    page: window.location.pathname
+                                });
+                            }
+                        }
+                    });
+                    ticking = false;
+                });
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+        })();
+    </script>
 </body>
 </html>
