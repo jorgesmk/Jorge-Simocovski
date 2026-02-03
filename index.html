@@ -1396,5 +1396,52 @@
             });
         });
     </script>
+    <script>
+        (function () {
+            const heroCta = document.querySelector('#hero .primary-btn');
+            if (heroCta) {
+                heroCta.addEventListener('click', function () {
+                    if (typeof gtag !== 'function') return;
+                    gtag('event', 'hero_cta_click', {
+                        section: 'hero',
+                        label: heroCta.innerText.trim()
+                    });
+                });
+            }
+
+            const projectCards = document.querySelectorAll('#projects .project');
+            projectCards.forEach(function (card) {
+                card.addEventListener('click', function () {
+                    if (typeof gtag !== 'function') return;
+                    const title = card.querySelector('.project-title');
+                    gtag('event', 'project_card_click', {
+                        section: 'projects',
+                        project_name: title ? title.innerText.trim() : ''
+                    });
+                });
+            });
+
+            const portfolioLinks = document.querySelectorAll('a[href^="http"]');
+            portfolioLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (typeof gtag !== 'function') return;
+                    let section = 'header';
+                    if (link.closest('footer')) {
+                        section = 'footer';
+                    } else if (link.closest('.project')) {
+                        section = 'featured';
+                    } else {
+                        const sectionEl = link.closest('section');
+                        if (sectionEl && sectionEl.id) {
+                            section = sectionEl.id;
+                        }
+                    }
+                    gtag('event', 'portfolio_link_click', {
+                        section: section
+                    });
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
